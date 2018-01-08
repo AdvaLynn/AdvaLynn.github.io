@@ -26,6 +26,7 @@ a:hover {
 div {
   background-color: pink;
   width: 100%;
+  max-height: max-content;
 }
 
 body {

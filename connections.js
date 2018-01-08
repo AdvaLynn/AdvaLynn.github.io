@@ -1,14 +1,17 @@
-function openSection(button) {
-  if (button.id == "education_btn" && !button.open) {
-    document.getElementById('education_block').innerHTML='<object data="education.html" ></object>';
+function openSection(button, info=false) {
+  button_block = button.id+"_block"
+  if (info){
+    var file = button.id+".html"
+  }
+  else{
+    var file = button.id+ "/" + button.id+".html"
+  }
+  if (!button.open) {
+    document.getElementById(button_block).innerHTML='<object data='+ file + ' width=100%></object>';
     button.open = true
   }
-  else if (button.id == "education_btn") {
-    document.getElementById('education_block').innerHTML='';
+  else {
+    document.getElementById(button_block).innerHTML='';
     button.open = false
-  }
-  if (button.id == "experience_btn" && !button.open) {
-    document.getElementById('experience_block').innerHTML='<object data="experience.html" ></object>';
-    button.open = true
   }
 }
